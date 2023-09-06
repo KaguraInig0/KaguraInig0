@@ -47,6 +47,31 @@ public class trip
 		
 		System.out.println("The Total Charges are: $" + totalCharges);
 	}
+	
+	/*
+	Name :Inigo Dela Vega
+	Date 09/05/23
+	Lab 2
+	
+	Microsoft Windows [Version 10.0.17763.4645]
+	(c) 2018 Microsoft Corporation. All rights reserved.
+
+	C:\week 2>javac trip.java
+
+	C:\week 2>java trip
+	This is the 1st package:
+	*******************************************
+	How large is your party?
+	10
+	********************************* outputs *********************************
+	The party size is:10 People
+	The base charges are: $3500.0
+	The Discount Charges are: $350.0
+	The Total Charges are: $3150.0
+
+	C:\week 2>
+
+	*/
 
 
 
