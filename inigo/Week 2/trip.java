@@ -7,6 +7,7 @@ public class trip
 		System.out.println("This is the 1st package:");
 		System.out.println("*******************************************");
 		int party = 0;
+		double discountCharges = 0.0;
 		double totalCharges = 0.0;
 		double baseChargeRate = 350.0;
 		double trainingChargesRate = 100.0;
@@ -23,15 +24,28 @@ public class trip
 		party = input.nextInt();
 		//calculating the base cahrges
 		baseCharges = baseChargeRate*party;
-		
-	
-	
+		totalCharges = baseCharges;
+		//test for discountRate
+			if(party>=5)
+			{
+				discountCharges = (discountRate * baseCharges);
+				totalCharges = (totalCharges - discountCharges);
+				
+				
+				
+			}
 	
 	
 	
 		System.out.println("********************************* outputs *********************************");
 		System.out.println("The party size is:" + party + " People");
 		System.out.println("The base charges are: $" + baseCharges);
+		System.out.println("The Discount Charges are: $" + discountCharges);
+		
+		
+		
+		
+		System.out.println("The Total Charges are: $" + totalCharges);
 	}
 
 
