@@ -21,8 +21,8 @@ public class trip
 		int nights = days-1;
 		System.out.println("How large is your party?");
 		party = input.nextInt();
-		
-		
+		//calculating the base cahrges
+		baseCharges = baseChargeRate*party;
 		
 	
 	
@@ -30,8 +30,8 @@ public class trip
 	
 	
 		System.out.println("********************************* outputs *********************************");
-		System.out.println("The party size is:" + party);
-	
+		System.out.println("The party size is:" + party + " People");
+		System.out.println("The base charges are: $" + baseCharges);
 	}
 
 
