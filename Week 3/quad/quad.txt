@@ -1,0 +1,44 @@
+CUsers900589666DesktopInigoWeek 3quadjava quad
+Please enter a value for a
+1
+Please enter a value for b
+6
+Please enter a value for c
+8
+outputs
+There are two unrepeated roots
+The value for a is1
+The value for b is6
+The value for c is8
+The X1 value is-2.0
+The X2 value is-4.0
+
+CUsers900589666DesktopInigoWeek 3quadjava quad
+Please enter a value for a
+1
+Please enter a value for b
+1
+Please enter a value for c
+1
+outputs
+There are two complex roots
+The value for a is1
+The value for b is1
+The value for c is1
+The X1 value isNaN
+The X2 value isNaN
+
+CUsers900589666DesktopInigoWeek 3quadjava quad
+Please enter a value for a
+1
+Please enter a value for b
+2
+Please enter a value for c
+1
+outputs
+There are two repeated roots
+The value for a is1
+The value for b is2
+The value for c is1
+The X1 value is-1.0
+The X2 value is-1.0
