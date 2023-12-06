@@ -1,0 +1,61 @@
+1. Import the Scanner class from the Java utility library.
+2. Define a class named ComputeTax.
+3. In the main function:
+   a. Create a Scanner object called "input" to read user input.
+   b. Prompt the user to enter their filing status (0-single filer, 1-married jointly or qualifying widow(er), 2-married separately, 3-head of household).
+   c. Read the user's input into an integer variable "status."
+   d. Prompt the user to enter their taxable income.
+   e. Read the user's input into a double variable "income."
+   f. Initialize a double variable "tax" to 0.
+   g. Use conditional statements to calculate the tax based on the user's filing status:
+      - If "status" is 0 (single filer):
+        - Check income ranges and calculate tax accordingly using tax brackets.
+      - If "status" is 1 (married jointly or qualifying widow(er)):
+        - Check income ranges and calculate tax accordingly using tax brackets.
+        etc for other statuses.
+4. End of the program.
+
+This is what calculations will happen when the user enter 0 for filing single filer
+then for each elevl of income they make
+
+test cases
+$z10,000
+
+tax = income * 0.10
+tax = $10,000 * 0.10
+tax = $1,000
+
+$25,000
+tax = 8350 * 0.10 + (income - 8350) * 0.15
+tax = $835 + ($25,000 - $8,350) * 0.15
+tax = $835 + $16,650 * 0.15
+tax = $835 + $2,497.50
+tax = $3,332.50
+
+$30,000
+tax = 8350 * 0.10 + (income - 8350) * 0.15
+tax = $835 + ($30,000 - $8,350) * 0.15
+tax = $835 + $21,650 * 0.15
+tax = $835 + $3,247.50
+tax = $4,082.50
+
+$65,000
+tax = 8350 * 0.10 + (33950 - 8350) * 0.15 + (income - 33950) * 0.25
+tax = $835 + ($33,950 - $8,350) * 0.15 + ($65,000 - $33,950) * 0.25
+tax = $835 + $25,600 * 0.15 + $31,050 * 0.25
+tax = $835 + $3,840 + $7,762.50
+tax = $12,437.50
+
+$85,000
+tax = 8350 * 0.10 + (33950 - 8350) * 0.15 + (income - 33950) * 0.25
+tax = $835 + ($33,950 - $8,350) * 0.15 + ($85,000 - $33,950) * 0.25
+tax = $835 + $25,600 * 0.15 + $51,050 * 0.25
+tax = $835 + $3,840 + $12,762.50
+tax = $17,437.50
+
+$100,000
+tax = 8350 * 0.10 + (33950 - $8,350) * 0.15 + (income - 33950) * 0.25
+tax = $835 + ($33,950 - $8,350) * 0.15 + ($100,000 - $33,950) * 0.25
+tax = $835 + $25,600 * 0.15 + $66,050 * 0.25
+tax = $835 + $3,840 + $16,512.50
+tax = $21,188.50

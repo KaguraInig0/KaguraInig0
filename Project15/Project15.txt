@@ -1,0 +1,140 @@
+//Inigo Dela Vega
+//12/3/2023
+// CS 113 Intro to JAVA
+// I have analyzed an written exactly what each line of code does in detail
+//Project15
+
+import java.util.*; // This line imports the Java utility library into our project.
+
+public class comment// This line establishes the first class in our program named comment. This class also holds our main function, and two other functions named getNum and sumNum.
+{
+    static Scanner console = new Scanner(System.in); // Establishes a new object of type Scanner and calls it console.
+
+    public static void main(String[] args)// This is the beginning of the main function of the program it will hold most of the important structure of our code.
+    {
+		int numOfDigitsNum1 = 0; // Intialize a variable of type int with the name of numOfDigitsNum1.  The value is initialized to 0.
+        int numOfDigitsNum2 = 0; // Intialize a variable of type int with the name of numOfDigitsNum2.  The value is initialized to 0.
+        String numStr1; // initialize a variable of type string with the name numStr1.
+        String numStr2; // initialize a variable of type string with the name numStr2.
+
+        System.out.print("Enter the first number: "); // Displays to the user on the console, Enter the first number.
+        numStr1 = console.next(); //Asks the user for a number from the user which is then saved as a string.
+        System.out.println(); // Creates a space on the console.
+
+        numOfDigitsNum1 = numStr1.length(); // stores the length of the word written by the user as an integer inside of the numOfDigitsNum1 variable.
+
+        System.out.print("Enter the second number: "); // Displays to the user on the console, Enter the second number.
+		numStr2 = console.next(); //Asks the user for a second number from the user which is then saved as a string.
+		System.out.println(); // Creates a space on the console.
+
+        numOfDigitsNum2 = numStr2.length(); // stores the length of the word written by the user as an integer inside of the numOfDigitsNum1 variable.
+
+        sumNum(numStr1, numStr2); // calls the function sumNum
+    } // End of main function
+
+    public static void getNum(int[] list, String numStr) // beginning of the getNum function that takes in an array and a variable of type string named numStr.
+    {
+        int index; // initialize an variable of type int named index.
+        int strIndex; // initialize an variable of type int named strIndex.
+
+        int length; // initialize an variable of type int named length.
+
+        length = numStr.length(); // Stores the length of the string taken in as the input as an integer into the length variable.
+        index = 0; // The value 0 is stored into the variable named index.
+
+        for (strIndex = numStr.length() - 1; strIndex >= 0; strIndex--) // we start a loop and look at the last character index then the loop count down until we hit 0 and then exit the loop
+        {
+            list[index] = (int) (numStr.charAt(strIndex)) - (int) ('0'); // the body of the loop is for looking at each character and then converting them into numbers then storing to an array.
+            index++; // move to next position.
+        }// end of loop
+    } //end of getnum function
+
+    public static void sumNum(String nStr1, String nStr2)// beginning of a new function named sumNum that takes in an input named nStr1 and nStr2 both of type string.
+    {
+		int digitsNum1 = nStr1.length(); // Intialize digitsNum1 and store the length of the variable nStr1 as an integer into digitsNum1.
+		int digitsNum2 = nStr2.length(); // Intialize digitsNum2 and store the length of the variable nStr2 as an integer into digitsNum2.
+
+		int[] list1 = new int[digitsNum1]; // initialize a list named list1 of type int. Its going to store the individual digits of digitsNum1 in this list.
+		int[] list2 = new int[digitsNum2]; // initialize a list named list2 of type int. Its going to store the individual digits of digitsNum2 in this list.
+
+        int digits = Math.max(digitsNum1, digitsNum2) + 1; // initialize a variable of type int called digits and store in it what will be returned from the function Math.max.  Math.max will return the larger of the two values.
+															// in this case math.max with compare digitsNum1, and digitsNum2.
+        int[] sumArray = new int[digits]; // initialize an array called sumArray and store in it the value of digits.
+
+        getNum(list1, nStr1); //calls getnum with the inputs list1, nStr1
+        getNum(list2, nStr2); // calls the function getNum with the  inputs list2, nStr2
+
+        int sumDigits; // initialize a variable called sumDigits of type int
+
+		//initialize the variables for the required math
+
+        int index1 = 0; // initialize a variable called index1 of type int
+        int index2 = 0; // initialize a variable called index2 of type int
+        int index = 0; // initialize a variable called index of type int
+        int carry = 0; // initialize a variable called carry of type int
+
+        while (index1 < digitsNum1 && index2 < digitsNum2) //setup the conditional for a while loop. In this case the loop will continue while the value for index 1 and 2 are lower then the value for digitsNum1 and 2.
+		{
+		    sumDigits = list1[index1] + list2[index2] + carry; // store the value of list1 at the current index and list 2 at the current index plus carry into sumDigits as an integer.
+
+	        if (sumDigits < 10) // beginning of an if conditional. In this casse if the sun of digits is less than 10 
+            {
+	            sumArray[index] = sumDigits; // store the value of sumDigits into the sumArray at the current index.
+	            carry = 0; // store the value 0 into carry.
+	        }
+	        else
+	        { // beginnnig of else
+	            sumArray[index] = sumDigits - 10; // all other cases subtract 10 from sum digits and store it in sumArray at the current index.
+	            carry = 1; // store the value 1 into carry.
+	        }
+	        index++; //increment index
+	        index1++; //increment index1
+	        index2++; // increment index2
+		} // end of while loop
+
+		if (index1 < digitsNum1) //beginning an if statement, in this case if the value of index1 is less tham the value of digitsNum1.
+		    for (int i = index1; i < digitsNum1; i++) //beginning of a for loop.
+		    {
+		        sumDigits = list1[i] + carry; //first add the value of carry to the list1 at i then store this into sumDigits as an int.
+
+		        if (sumDigits < 9) // beginning of if, in this case sumDigits must be less than 9.
+		        {
+		            sumArray[index] = sumDigits; // store the value of sumDigits as an integer into sumArray at the location of index.
+		            carry = 0; // store the value of 0 into carry.
+		        } // end if
+		        else // beginning of else
+		        {
+		            sumArray[index] = sumDigits - 10; // first subtract 10 from sumDigits then store this value into sumArray athe the location index
+		            carry = 1; // store the value of 1 into carry as an integer
+		        }
+		        index++; //increment index
+		    }//end for loop
+		else if (index2 < digitsNum2) //begin else if, in this case if index2 value is less tham digitsNum2 value
+		    for (int i = index2; i < digitsNum2; i++) //begin for loop
+		    {
+		        sumDigits = list2[i] + carry; // first add the value of carry to the value of list2 at i and then store this value sumDigits.
+
+		        if (sumDigits < 9) //begin if , in this case if sumDigits is liss than 9
+		        {
+		            sumArray[index] = sumDigits; // store the value of sumDigits into the location of sumArray at index.
+		            carry = 0; // stire the value of 0 into carry.
+		        }
+		        else //begin else
+		        {
+		            sumArray[index] =  sumDigits - 10; // first subtract 10 from sumDigits then store this value into sumArray at index.
+		            carry = 1; = store the value of 1 into carry.
+		        }
+		        index++; //increment index.
+		    }// end for loop
+
+		if (index <= digits && carry == 1) // begin if, in this case index must be less than or equal to digits and carry must equal 1 
+		{
+		    sumArray[index] = 1; // store the value 1 into sumArray at index
+		    index++; // increment index
+        }
+
+        for (int i = index - 1; i >= 0; i--) // begin for loop i in this case is the value of index -1, it will count down 
+            System.out.print(sumArray[i]); // display to the user the value of sumArray at location i
+        System.out.println(); // make a space
+    }
+}
