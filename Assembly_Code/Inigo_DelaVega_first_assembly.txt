@@ -1,0 +1,28 @@
+;Inigo Dela Vega
+;prog2
+;4/15/24
+
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess PROTO, dwExitCode:Dword
+.data
+sum DWORD 0
+.code
+main Proc
+	mov eax, 5
+	add  eax, 6
+	mov sum,eax
+
+
+	INVOKE ExitProcess, 0
+main ENDP
+END Main
+
+Output:EAX = 0000000B EBX = 00C0F000 ECX = 00E21005 EDX = 00E21005 ESI = 00E21005 EDI = 00E21005 EIP = 00E21018 ESP = 00F2F8E8 EBP = 00F2F8F4 EFL = 00000202 
+
+0x00E24000 = 00000000 
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
