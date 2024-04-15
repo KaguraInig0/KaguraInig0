@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @KaguraInig0
 - 👀 I’m interested in game Design!
-- 🌱 I’m currently learning C# and Unity! ... And java 
+- 🌱 I’m currently learning Unreal Engine and Unity! ... And java 
 - 💞️ I’m looking to collaborate on any projects! 
 - 📫 How to reach me delavegainigomikael@gmail.com
 
