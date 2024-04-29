@@ -1,0 +1,64 @@
+Prog12
+
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess PROTO,dwExitCode:Dword
+.data
+Rval SDWORD ?
+Xval SDWORD 26
+Yval SDWORD 30
+Zval SDWORD 40
+.code
+Main PROC
+	
+	; INC and DEC
+	mov ax,1000h
+	inc ax			;1001h
+	dec ax			;1000h
+
+	; Expression: Rval = -Xval + (Yval - Zval)
+	mov eax,Xval
+	neg eax			; -26
+	mov ebx,Yval	
+	sub ebx,Zval	; -10
+	add eax,ebx
+	mov Rval,eax	; -36
+
+	;Zero Flag example:
+	mov cx,1
+	sub cx,1		; ZF = 1
+	mov ax,0FFFFh	 
+	inc ax			; ZF = 1
+
+	;Sign Flag example:
+	mov cx,0
+	sub cx,1		; SF = 1
+	mov ax,7FFFh
+	add ax,2		; SF = 1
+
+	;Carry flag example:
+	mov al,0FFh
+	add al,1		; CF = 1, AL = 00
+
+	;Overflow flag example:
+	mov al,+127		
+	mov al,1		; OF = 1
+	mov al,-128		
+	mov al,1		; OF = 1
+
+INVOKE ExitProcess, 0
+Main ENDP
+
+END main
+
+
+
+Outputs----------------------------------------------------------------------------------------------------------------------
+Name: Inigo Dela Vega
+Project7
+Date: 4-29-24
+EAX = FFFF8080 EBX = FFFFFFF6 ECX = 009EFFFF EDX = 009E1005 ESI = 009E1005 EDI = 009E1005 EIP = 009E105A ESP = 00CFFC60 EBP = 00CFFC6C EFL = 00000257 
+
+OV = 0 UP = 0 EI = 1 PL = 0 ZR = 1 AC = 1 PE = 1 CY = 1 
+
