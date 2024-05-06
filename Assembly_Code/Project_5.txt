@@ -1,0 +1,44 @@
+Project 5
+Inigo Dela Vega
+5-6-24
+
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess proto, dwExitCode:dword
+
+.data
+var1 BYTE 2h
+var2 SBYTE -14
+var3 WORD 2000
+var4 SWORD +2345
+var5 DWORD 12345678h
+var6 SDWORD -2342423
+var7 FWORD 0
+var8 QWORD 1234567812345678h
+var9 TBYTE 1000000000123456789Ah
+var10 REAL4 -1.25
+var11 REAL8 3.2E+100
+var12 REAL10 -6.223424E-2343
+
+.code
+main PROC
+mov eax,0
+mov al,var1
+mov al,var2
+;mov eax,var3
+;mov eax,var4
+;mov eax,var5
+;mov eax,var6
+;mov eax,var7
+;mov eax,var8
+;mov eax,var9
+;mov eax,var10
+;mov eax,var11
+;mov eax,var12
+
+	INVOKE ExitProcess,0
+main ENDP
+
+END main
+
