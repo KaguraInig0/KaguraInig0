@@ -10,8 +10,7 @@ Interested in systems design, machine learning, and building things that actuall
 
 ## Projects
 - **Summer Game Jam 2024** — [link]
-- **Fishing Game** — [link]
-- **JaxVsDummy** — [link]
+
 
 ## Currently
 - Finishing my last semester at ELAC
